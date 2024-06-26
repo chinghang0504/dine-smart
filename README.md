@@ -1,55 +1,157 @@
 # Project Title
 
+DineSmart
+
 ## Overview
 
-What is your app? Brief description in a couple of sentences.
+DineSmart is a comprehensive restaurant management system designed to streamline operations, enhance customer experience, and provide valuable insights for managers. It includes a web application for customers to order food and receive AI-based recommendations, a mobile application for employees to check order statuses, and a desktop application for managers to analyze order history, manage menu items, and performance.
 
 ### Problem
 
-Why is your app needed? Background information around any pain points or other reasons.
+The restaurant industry faces significant challenges such as high labor costs, inefficiencies in order management, and the need for timely and accurate food recommendations. Customers often experience long wait times and lack personalized recommendations, while managers struggle with tracking popular menu items and overall operational efficiency. DineSmart aims to address these pain points by automating order processes, providing AI-driven food recommendations, and offering robust analytics for better decision-making.
 
 ### User Profile
 
-Who will use your app? How will they use it? Any special considerations that your app must take into account.
+Customers
+
+- Individuals dining at the restaurant who want a quick and easy way to order food and receive personalized recommendations.
+- Via a web application accessible on their smartphones or tablets to place orders and receive AI recommendations.
+
+Employees
+
+- Restaurant staff who need to track and manage food orders efficiently.
+- Through a mobile application on tablets or smartphones to monitor and update the status of food orders.
+
+Managers
+
+- Restaurant managers who require detailed insights into order history, the ability to manage menu items, and overall performance.
+- Using a desktop application to review order history, analyze trends, manage menu items, and generate reports.
 
 ### Features
 
-List the functionality that your app will include. These can be written as user stories or descriptions with related details. Do not describe _how_ these features are implemented, only _what_ needs to be implemented.
+Customer Web Application:
+
+- Browse menu items and place orders.
+- Receive AI-based food recommendations.
+- Track order status in real-time.
+
+Employee Mobile Application:
+
+- View incoming orders and their status.
+- Update order status (e.g., preparing, ready for pickup).
+- Receive notifications for new orders.
+
+Manager Desktop Application:
+
+- Access order history and detailed reports.
+- Analyze popular and least popular menu items.
+- Monitor real-time order status and kitchen performance.
+- Login to the server to add or remove food items from the menu.
 
 ## Implementation
 
 ### Tech Stack
 
-List technologies that will be used in your app, including any libraries to save time or provide more functionality. Be sure to research any potential limitations.
+- Front-End Web Application: React, HTML, SASS, TypeScript
+- Front-End Mobile Application: Android (Kotlin)
+- Back-End: Spring Boot (Java)
+- Data Analysis: Python, NumPy, Pandas, Matplotlib
+- Database: MySQL
+- Artificial Intelligence: OpenAI GPT-4
+- Libraries and Tools: Material-UI, WebSockets for real-time communication
 
 ### APIs
 
-List any external sources of data that will be used in your app.
+- OpenAI GPT-4 API: For AI-based food recommendations.
 
 ### Sitemap
 
-List the pages of your app with brief descriptions. You can show this visually, or write it out.
+Web Application (Customer):
+
+- Home Page: Browse menu and place orders.
+- Order Status: Track order status.
+- Recommendations: View AI-based food recommendations.
+
+Mobile Application (Employee):
+
+- Order Dashboard: View and manage current orders.
+- Notifications: Receive real-time updates on new orders.
+
+Desktop Application (Manager):
+
+- Dashboard: Overview of order statuses and performance.
+- Order History: Detailed reports and analytics on past orders.
+- Analytics: Visualizations of popular menu items and trends.
+- Menu Management: Add or remove food items from the menu.
 
 ### Mockups
 
-Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches.
+Web Application (Customer):
+
+- Not implemented yet.
+
+Mobile Application (Employee):
+
+- Not implemented yet.
+
+Desktop Application (Manager):
+
+- Not implemented yet.
 
 ### Data
 
-Describe your data and the relationships between them. You can show this visually using diagrams, or write it out. 
+- Account: accountID, accountType, username, password
+- MenuItem: menuItemID, name, description, price, category
+- Order: orderID, tableID, menuItemIDs, status, timestamp
 
 ### Endpoints
 
-List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
+Web Application (Customer):
+
+- GET /menu (Get all the menu items)
+- POST /order (Send a food order)
+- GET /recommendation (Get AI-based food recommendations)
+
+Mobile Application (Employee):
+
+- GET /orders (Get list of all current orders)
+- PUT /orders/:id (Update order status)
+
+Desktop Application (Manager):
+
+- GET /orders/history (Get order history)
+- POST /menuitem (Add a new menu item)
+- DELETE /menuitem/:id (Delete a menu item)
 
 ### Auth
 
-Does your project include any login or user profile functionality? If so, describe how authentication/authorization will be implemented.
+- Authentication: Use JWT (JSON Web Tokens) for user login and registration.
+- Authorization: Role-based access control to ensure that customers, employees, and managers have appropriate access to features. Only the manager can change the menu items.
 
 ## Roadmap
 
-Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build.
+3 Days:
+
+- Setup the server and database.
+- Setup the login system.
+- Setup the menu system.
+
+3 Days:
+
+- Setup the client food order system.
+
+3 Days:
+
+- Setup the manager analysis system.
+
+3 Days:
+
+- Setup the employee notification system.
 
 ## Nice-to-haves
 
-Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing.
+- Advanced Analytics: More detailed insights such as customer behavior patterns.
+- Loyalty Program: Implement a loyalty program for frequent customers.
+- Multi-language Support: Support for multiple languages to cater to a diverse customer base.
+- Inventory Management: Track ingredient usage and alert when restocking is needed.
+- Customer Feedback Integration: Allow customers to leave feedback directly through the app and use this data to further refine AI recommendations.
