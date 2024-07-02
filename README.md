@@ -130,23 +130,83 @@ Desktop Application (Manager):
 
 ## Roadmap
 
-3 Days:
+### Stage 1: Menu System (Creation)
 
-- Setup the server and database.
-- Setup the login system.
-- Setup the menu system.
+#### Objectives:
 
-3 Days:
+- Allow diners to view the menu on their mobile devices.
 
-- Setup the client food order system.
+#### Features:
 
-3 Days:
+1. Food Category View:
+   - Display various categories of food available.
+2. List of Food Items:
+   - Show the list of food items under each category.
+3. Food Description:
+   - Provide detailed descriptions of each food item including ingredients, price, and images.
 
-- Setup the manager analysis system.
+### Stage 2: Menu System (Improvement)
 
-3 Days:
+#### Objectives:
 
-- Setup the employee notification system.
+- Enable managers to manage the menu items.
+
+#### Features:
+
+1. Add Items:
+   - Managers can add new items to the menu.
+2. Change Item Details:
+   - Managers can update details of existing items (e.g., price, description).
+3. Change Item Status:
+   - Managers can change the status of menu items (e.g., available, out of stock).
+4. Delete Items:
+   - Managers can remove items from the menu.
+5. Database Storage:
+   - All menu items are stored in a database.
+6. Cache System:
+   - Implement a caching system to efficiently retrieve menu items.
+
+### Stage 3: Order System (Creation)
+
+#### Objectives:
+
+- Allow diners to modify their carts and send orders. Enable managers to receive orders.
+
+#### Features:
+
+1. Modify Cart:
+   - Diners can add items to their cart.
+   - Diners can delete items from their cart.
+2. Send Orders:
+   - Diners can place their food orders through the app.
+3. Receive Orders:
+   - Managers can receive and view food orders in real-time.
+
+### Stage 4: Auth System (Creation)
+
+#### Objectives:
+
+- Implement an authentication system to manage user roles.
+
+#### Features:
+
+1. Root Account:
+   - The root account can create manager accounts.
+2. Manager Account:
+   - Manager accounts can modify the menu.
+   - Manager accounts can receive food orders.
+
+### Stage 5: Order System (Improvement)
+
+#### Objectives:
+
+- Enhance the order system to manage table identifications.
+
+#### Features:
+
+1. Table Identification:
+   - Managers can select different table identifications.
+   - Option to use fixed table IDs or generate unique table IDs for each order session.
 
 ## Nice-to-haves
 
