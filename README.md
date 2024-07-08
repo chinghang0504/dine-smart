@@ -1,217 +1,154 @@
-# Project Title
-
-DineSmart
+# Project Proposal: DineSmart
 
 ## Overview
 
-DineSmart is a comprehensive restaurant management system designed to streamline operations, enhance customer experience, and provide valuable insights for managers. It includes a web application for customers to order food and receive AI-based recommendations, a mobile application for employees to check order statuses, and a desktop application for managers to analyze order history, manage menu items, and performance.
+DineSmart is a comprehensive restaurant management system designed to streamline operations and enhance customer experience. It consists of a web application for diners to view the menu and place orders, a web application for managers to manage the menu and track orders, and a server to handle all backend operations.
 
 ### Problem
 
-The restaurant industry faces significant challenges such as high labor costs, inefficiencies in order management, and the need for timely and accurate food recommendations. Customers often experience long wait times and lack personalized recommendations, while managers struggle with tracking popular menu items and overall operational efficiency. DineSmart aims to address these pain points by automating order processes, providing AI-driven food recommendations, and offering robust analytics for better decision-making.
+The restaurant industry faces challenges such as high labor costs and inefficiencies in order management. Customers often experience long wait times and lack of personalized service. Managers struggle with tracking popular menu items and overall operational efficiency. DineSmart addresses these issues by automating menu management and providing a seamless ordering experience for customers.
 
 ### User Profile
 
 Customers
 
-- Individuals dining at the restaurant who want a quick and easy way to order food and receive personalized recommendations.
-- Via a web application accessible on their smartphones or tablets to place orders and receive AI recommendations.
-
-Employees
-
-- Restaurant staff who need to track and manage food orders efficiently.
-- Through a mobile application on tablets or smartphones to monitor and update the status of food orders.
+- Individuals dining at the restaurant who want a quick and easy way to view the menu and place orders.
+- Accessed via a web application on their smartphones or tablets.
 
 Managers
 
-- Restaurant managers who require detailed insights into order history, the ability to manage menu items, and overall performance.
-- Using a desktop application to review order history, analyze trends, manage menu items, and generate reports.
+- Restaurant managers who need to manage the menu and track orders efficiently.
+- Accessed via a web application on their desktop or laptop.
 
 ### Features
 
-Customer Web Application:
+Diner Web Application:
 
-- Browse menu items and place orders.
-- Receive AI-based food recommendations.
-- Track order status in real-time.
+- Browse Menu: View available food items categorized by type.
+- Place Orders: Select items and place orders.
 
-Employee Mobile Application:
+Manager Web Application:
 
-- View incoming orders and their status.
-- Update order status (e.g., preparing, ready for pickup).
-- Receive notifications for new orders.
-
-Manager Desktop Application:
-
-- Access order history and detailed reports.
-- Analyze popular and least popular menu items.
-- Monitor real-time order status and kitchen performance.
-- Login to the server to add or remove food items from the menu.
+- Manage Menu:
+  - Add Food Type: Add new categories of food.
+  - Add Food Item: Add new food items to the menu.
+  - Edit Food Item: Modify details of existing food items.
+  - Delete Food Item: Remove food items from the menu.
+- Track Orders: View and manage current orders.
 
 ## Implementation
 
 ### Tech Stack
 
-- Front-End Web Application: React, HTML, SASS, TypeScript
-- Front-End Mobile Application: Android (Kotlin)
-- Back-End: Spring Boot (Java)
-- Data Analysis: Python, NumPy, Pandas, Matplotlib
+- Front-End Web Application: React, HTML, SASS, JavaScript
+- Back-End: Express.js
 - Database: MySQL
-- Artificial Intelligence: OpenAI GPT-4
-- Libraries and Tools: Material-UI, WebSockets for real-time communication
+- Libraries and Tools: Bootstrap, WebSockets for real-time communication
 
 ### APIs
 
-- OpenAI GPT-4 API: For AI-based food recommendations.
+- Custom APIs developed using Express.js for handling menu and order data.
 
 ### Sitemap
 
-Web Application (Customer):
+Diner Web Application:
 
-- Home Page: Browse menu and place orders.
-- Order Status: Track order status.
-- Recommendations: View AI-based food recommendations.
+1. Menu Page: Browse menu items categorized by type.
+2. Order Page: View cart and place orders.
 
-Mobile Application (Employee):
+Manager Web Application:
 
-- Order Dashboard: View and manage current orders.
-- Notifications: Receive real-time updates on new orders.
-
-Desktop Application (Manager):
-
-- Dashboard: Overview of order statuses and performance.
-- Order History: Detailed reports and analytics on past orders.
-- Analytics: Visualizations of popular menu items and trends.
-- Menu Management: Add or remove food items from the menu.
+1. Menu: Overview of menu management.
+2. Menu Management: Add, edit, and delete food types and items.
+3. Order Tracking: Monitor and manage current orders.
 
 ### Mockups
 
-Web Application (Customer):
+Diner Web Application:
 
-- Not implemented yet.
+![Diner Web Application](https://github.com/chinghang0504/dine-smart/blob/main/Diner.PNG?raw=true)
 
-Mobile Application (Employee):
+Manager Web Application:
 
-- Not implemented yet.
-
-Desktop Application (Manager):
-
-- Not implemented yet.
+![Manager Web Application](https://github.com/chinghang0504/dine-smart/blob/main/Manager.PNG?raw=true)
 
 ### Data
 
-- Account: accountID, accountType, username, password
-- MenuItem: menuItemID, name, description, price, category
-- Order: orderID, tableID, menuItemIDs, status, timestamp
+- food_types (Table)
+  - id
+  - type
+  - image
+  - priority
+- food_items (Table)
+  - id
+  - name
+  - description
+  - price
+  - image
+  - priority
+  - type
 
 ### Endpoints
 
-Web Application (Customer):
+Diner Web Application:
 
-- GET /menu (Get all the menu items)
-- POST /order (Send a food order)
-- GET /recommendation (Get AI-based food recommendations)
+- GET /menu/diner/foodtypes: Get all the food types
+- GET /menu/diner/fooditems: Get the food items of a specific type
 
-Mobile Application (Employee):
+Manager Web Application:
 
-- GET /orders (Get list of all current orders)
-- PUT /orders/:id (Update order status)
-
-Desktop Application (Manager):
-
-- GET /orders/history (Get order history)
-- POST /menuitem (Add a new menu item)
-- DELETE /menuitem/:id (Delete a menu item)
-
-### Auth
-
-- Authentication: Use JWT (JSON Web Tokens) for user login and registration.
-- Authorization: Role-based access control to ensure that customers, employees, and managers have appropriate access to features. Only the manager can change the menu items.
+- GET /menu/manager/foodtypes: Get all the food types
+- POST /menu/manager/foodtypes: Create a new food type
+- DELETE /menu/manager/foodtypes: Delete a food type
+- PUT /menu/manager/foodtypes: Modify a food type
+- GET /menu/manager/fooditems: Get all the food items
+- POST /menu/manager/fooditems: Create a new food item
+- DELETE /menu/manager/fooditems: Delete a food item
+- PUT /menu/manager/fooditems: Modify a food item
 
 ## Roadmap
 
 ### Stage 1: Menu System (Creation)
 
-#### Objectives:
+- Diners can view the menu on their mobile devices.
+- Display food categories, list of food items, and descriptions.
 
-- Allow diners to view the menu on their mobile devices.
+### Stage 2: Menu System (Improvement) [Before Deadline]
 
-#### Features:
+- Managers can manage the menu.
+- Add items
+- Edit item details
+- Change item status
+- Delete items
 
-1. Food Category View:
-   - Display various categories of food available.
-2. List of Food Items:
-   - Show the list of food items under each category.
-3. Food Description:
-   - Provide detailed descriptions of each food item including ingredients, price, and images.
+### Stage 3: Order System (Creation) [Before Demo day]
 
-### Stage 2: Menu System (Improvement)
-
-#### Objectives:
-
-- Enable managers to manage the menu items.
-
-#### Features:
-
-1. Add Items:
-   - Managers can add new items to the menu.
-2. Change Item Details:
-   - Managers can update details of existing items (e.g., price, description).
-3. Change Item Status:
-   - Managers can change the status of menu items (e.g., available, out of stock).
-4. Delete Items:
-   - Managers can remove items from the menu.
-5. Database Storage:
-   - All menu items are stored in a database.
-6. Cache System:
-   - Implement a caching system to efficiently retrieve menu items.
-
-### Stage 3: Order System (Creation)
-
-#### Objectives:
-
-- Allow diners to modify their carts and send orders. Enable managers to receive orders.
-
-#### Features:
-
-1. Modify Cart:
-   - Diners can add items to their cart.
-   - Diners can delete items from their cart.
-2. Send Orders:
-   - Diners can place their food orders through the app.
-3. Receive Orders:
-   - Managers can receive and view food orders in real-time.
-
-### Stage 4: Auth System (Creation)
-
-#### Objectives:
-
-- Implement an authentication system to manage user roles.
-
-#### Features:
-
-1. Root Account:
-   - The root account can create manager accounts.
-2. Manager Account:
-   - Manager accounts can modify the menu.
-   - Manager accounts can receive food orders.
-
-### Stage 5: Order System (Improvement)
-
-#### Objectives:
-
-- Enhance the order system to manage table identifications.
-
-#### Features:
-
-1. Table Identification:
-   - Managers can select different table identifications.
-   - Option to use fixed table IDs or generate unique table IDs for each order session.
+- Diners can modify their carts and place orders.
+- Managers can receive and manage food orders.
 
 ## Nice-to-haves
 
-- Advanced Analytics: More detailed insights such as customer behavior patterns.
+- Advanced Analytics: Detailed insights such as customer behavior patterns.
 - Loyalty Program: Implement a loyalty program for frequent customers.
-- Multi-language Support: Support for multiple languages to cater to a diverse customer base.
+- Multi-language Support: Support for multiple languages.
 - Inventory Management: Track ingredient usage and alert when restocking is needed.
-- Customer Feedback Integration: Allow customers to leave feedback directly through the app and use this data to further refine AI recommendations.
+- Customer Feedback Integration: Allow customers to leave feedback directly through the app.
+
+## Additionals
+
+### GitHub Repository
+
+- Project Proposal: https://github.com/chinghang0504/dine-smart
+- Diner Web Application: https://github.com/chinghang0504/dine-smart-diner
+- Manager Web Application: https://github.com/chinghang0504/dine-smart-manager
+- Server Application: https://github.com/chinghang0504/dine-smart-server
+
+### Instructions
+
+- Read the README.md file in Server Application to setup the database and server.
+- Read the README.md file in Manager Web Application to setup.
+- Read the README.md file in Diner Web Application to setup.
+
+### References
+
+- Sushi California: https://sushi-california.com/
